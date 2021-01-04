@@ -1,3 +1,4 @@
+![WeatherDashboard](https://user-images.githubusercontent.com/72671999/103507010-bf958080-4e23-11eb-9fed-fd435e9d3e6c.png)
 # Weather-Dashboard
 
 ### My Project Summary
