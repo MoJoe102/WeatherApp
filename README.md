@@ -1,5 +1,7 @@
+![WeatherDashboard2](https://user-images.githubusercontent.com/72671999/103507318-83165480-4e24-11eb-9170-6e02d3af8ff3.png)
+
 ![WeatherDashboard](https://user-images.githubusercontent.com/72671999/103507010-bf958080-4e23-11eb-9fed-fd435e9d3e6c.png)
-# Weather-Dashboard
+# WeatherApp
 
 ### My Project Summary
 * HTML and CSS and Javascript documents create a weather application 
