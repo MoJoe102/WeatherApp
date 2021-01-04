@@ -1,69 +1,94 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Pure CSS-->
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+        integrity="sha384-4ZPLezkTZTsojWFhpdFembdzFudphhoOzIunR1wH6g1WQDzCAiPvDyitaK67mp0+" crossorigin="anonymous">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="Assets/style.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <title>Weather Dashbaord</title>
-  </head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./Assets/style.css">
+    <title>Weather Dashboard</title>
 
-  <body>
-    <div class="container-fluid text-center text-light bg-dark">
-        <h1>Weather Dashboard</h1>
-    </div>
-    <div class="container">
-        <div class="clearfix">
-            <div class="col-4 float-left">
-                <nav class="navbar navbar-light bg-light shadow-lg p-3 mb-5 bg-white rounded">
-                    <h4>Search for a City:</h4>
-                        <form class="form-inline">
-                            <input id="city-input" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                            <button id="select-city" class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
-                        </form>
-                    <form id="searchhistory" class="mt-1">
-    <!---------------------- Search history dynamically inserts here  --------------------------------->
-                    </form>
-                </nav>
-            </div>
-            <div class="col-8 float-right">
-                <div class="card bg-light text-dark p-2 rem shadow-lg p-3 mb-5 bg-white rounded" style="width: 710; height: 19rem;">
-                    <div id="current"></div>
-    <!----------------------  Current weather dynamically inserts  here  ------------------------------->
-                    <div id="uvl-display"></div>
-                </div>
-                    <br>
-                    <h2>5-Day Forcast:</h2>
-                <div  id="5day" class="row">
-    <!-------------------  5 Day forcast dynamically inserts  here ------------------------------------>
-                </div>
-            </div> 
-        </div>
-    </div>
-  
+</head>
+
+<body>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="script.js"></script>
-  </body>
-</html>
-        <!--Placed a footer with my peronal copyright attempt-->
-    <footer class="py-4 bg-dark text-white-50">
-        <div class="text-center">
-            <large>
-                Copyright &copy; 2020 Joseph Haas. All rights reserved.
-            </large>
-        </div>
-    </footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/d3bce829f3.js" crossorigin="anonymous"></script>
+    <!-- HTML Body -->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <div class="container-fluid">
+        <div class="jumbotron dark text-center">
+            <h1>My Weather Dashboard</h1>
+            <div class="col-4 center">
+
+                <div class="card-body text center">
+                    <!-- User/ Weather Search input goes here -->
+
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body bg-dark">
+                            <h6 class="card-subtitle mb-2 text-style">Search For A City</h6>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control searchInput" placeholder="Enter City Name"
+                                    aria-label="Recipient's username" aria-describedby="button-addon2">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary bg-primary searchButton" type="button"
+                                        id="button-addon2"> <i class="fas fa-circle-notch fa-spin"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="list-group"> </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- This will appends the current weather information forecast-->
+    <div class="col mt-4 mr-5">
+        <div class="card currentCard pb-2 pt-1-center">
+            <h5 class="card-title mt-2 text-center">Current Requested Weather Forecast</h5>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col mt-4">
+            <div class="card pb-5 fiveDayCard pl-5">
+                <!-- This will appends the 5 day forecast-->
+                <h5 class="card-title mt-2 mr-5 text-center">Your Requested 5-Day Weather Forecast </h5>
+                <div class="row">
+                    <div class="col fiveDayOne">
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+
+    <!-- JS and Jquery scripts -->
     <script src="./Assets/style.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 
 </body>
 
