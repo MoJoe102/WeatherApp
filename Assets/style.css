@@ -1,0 +1,67 @@
+ul {
+	list-style: none;
+	background-color: rgb(108, 146, 108);
+
+}
+.card {
+	background-color: lightblue;
+	border-radius: 5px;
+	border: solid;
+	border-color: darkblue;
+}
+.jumbotron {
+	background-attachment: relative;
+	background-color:tan;
+	background-image: url(./images/SunsetSkywTree.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+h5 {
+	font: medium;
+	color: rgba(128, 0, 0, 0.795);
+	font-style: times;
+	
+}
+/* styles for Li */
+li {
+    border-bottom: 1px solid rgb(39, 17, 17);
+    text-align: left;
+	padding-left: 10px;
+	background-color: rgb(108, 146, 108);
+	color: bisque;
+
+}
+/* styles for card titles  */
+.card-title {
+	font-size: 20px;
+	color: rgb(22, 13, 0);
+	font: f12b;
+}
+
+/* styles for five day forecast colors */
+.fiveDayColor {
+    padding: 20px;
+    background-color: #98bee4;
+    color: rgba(255, 255, 255, 0.747);
+    float: left;
+    margin: 10px;
+    border: 2px solid rgb(65, 14, 78);
+
+}
+.fas {
+	color: green;
+	background-color: beige;
+}
+.card-subtitle {
+	font-style: italic;
+	color: beige;
+	font-size: medium;
+}
+.container-fluid {
+	
+	background-color: lightgoldenrodyellow;
+	
+}
+h1 {
+	color: darkblue;
+}
